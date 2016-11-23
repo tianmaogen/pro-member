@@ -1,0 +1,24 @@
+ibabygroup:
+  swagger:
+    enabled: false
+  net:
+    host: http://api.ibabygroup.cn/
+  rest:
+    host: http://10.45.237.58:18080/
+    token: 2RRO7i13GqNryj3b
+  appconfig:
+    ignore-auth: true
+  duiba:
+    appKey: 3YQhqRLMbVJGgtU4fBZuaWBrd38p
+    appSecret: 3KnKW8pHFj9BVgpNVfSmGkYBmLbc
+spring:
+  datasource:
+    url: jdbc:mysql://10.45.237.58:13306/member?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: LiQswewe1@ina#gs
+    type: com.zaxxer.hikari.HikariDataSource
+# nginx
+app-uac-server-prod:
+ ribbon:
+  listOfServers: 10.144.45.27:9696

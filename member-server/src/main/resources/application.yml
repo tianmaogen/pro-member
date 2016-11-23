@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: ${ibabygroup.appconfig.app-name}-${spring.profiles.active}
+  profiles:
+    active: test
+
+server:
+  port: 4042
+
+#iBaby config
+ibabygroup:
+  appconfig:
+    appid: 404
+    is-webapi: true
+    app-name: pro-member
+    json-response-ignores: "/cloud/member/v1/duiba/**"
+
+  swagger:
+    base-package: cn.ibabygroup.pros.member.web.controller
+
+# 配置有效性待确认
+ribbon:
+ ActiveConnectionsLimit: 10
+ ConnectTimeout: 5000
+ ReadTimeout: 20000
+ OkToRetryOnAllOperations: true
+ MaxAutoRetriesNextServer: 0
+ MaxAutoRetries: 0
+ ServerListRefreshInterval : 1000
+
+# 配置Hystrix
+hystrix.command.default.fallback.enabled: false
+hystrix.command.default.circuitBreaker.enabled: false
+hystrix.command.default.metrics.rollingPercentile.enabled: false
+
+hystrix.command.default.execution.isolation.thread.interruptOnTimeout: true
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+#hystrix.command.default.execution.isolation.semaphore.maxConcurrentRequests: 32
+hystrix.threadpool.default.coreSize: 20
+
+# swagger
+springfox.documentation.swagger.v2.path: /swagger/v2/api-docs
